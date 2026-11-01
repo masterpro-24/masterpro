@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MASTER PRO — Toshkentda santexnika va elektrika xizmatlari. Tezkor murojaat va sifatli xizmat.">
+  <meta name="theme-color" content="#071a33">
+  <title>MASTER PRO | Santexnika va Elektrika</title>
+  <style>
+    :root {
+      --navy: #071a33;
+      --blue: #1267d6;
+      --cyan: #21c4df;
+      --yellow: #ffca3a;
+      --text: #17243a;
+      --muted: #64748b;
+      --light: #f3f7fc;
+      --white: #fff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .topbar {
+      background: #041226; color: #dce8f7; padding: 9px 6%;
+      display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      font-size: 13px;
+    }
+    header {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(7,26,51,.96); backdrop-filter: blur(12px);
+      color: white; box-shadow: 0 8px 25px rgba(0,0,0,.12);
+    }
+    .nav {
+      max-width: 1180px; margin: auto; padding: 15px 22px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .brand { font-size: 25px; font-weight: 900; letter-spacing: 1.5px; }
+    .brand span { color: var(--yellow); }
+    .navlinks { display: flex; align-items: center; gap: 26px; font-size: 14px; }
+    .navlinks a:hover { color: var(--yellow); }
+    .nav-phone {
+      background: var(--yellow); color: #15243a; padding: 10px 16px;
+      border-radius: 9px; font-weight: 800; white-space: nowrap;
+    }
+    .hero {
+      min-height: 570px; display: flex; align-items: center; color: white;
+      background:
+        linear-gradient(90deg, rgba(4,17,37,.94) 0%, rgba(4,17,37,.78) 48%, rgba(4,17,37,.25) 100%),
+        url("https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1800&q=85") center/cover;
+    }
+    .hero-inner { max-width: 1180px; width: 100%; margin: auto; padding: 80px 22px; }
+    .eyebrow {
+      display: inline-block; color: var(--yellow); border: 1px solid rgba(255,202,58,.5);
+      background: rgba(255,202,58,.1); padding: 7px 13px; border-radius: 30px;
+      font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    h1 { font-size: clamp(40px, 6vw, 70px); line-height: 1.05; max-width: 700px; margin-bottom: 22px; }
+    h1 span { color: var(--yellow); }
+    .hero p { color: #d5e0ee; max-width: 570px; font-size: 18px; margin-bottom: 30px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 13px; }
+    .btn {
+      display: inline-flex; justify-content: center; align-items: center; gap: 9px;
+      padding: 14px 22px; border-radius: 10px; font-weight: 800;
+      transition: transform .25s, box-shadow .25s, background .25s;
+    }
+    .btn:hover { transform: translateY(-4px); box-shadow: 0 12px 25px rgba(0,0,0,.2); }
+    .btn-primary { background: var(--yellow); color: #17243a; }
+    .btn-outline { border: 1px solid rgba(255,255,255,.55); color: white; }
+    section { padding: 82px 22px; }
+    .container { max-width: 1180px; margin: auto; }
+    .section-head { text-align: center; max-width: 680px; margin: 0 auto 42px; }
+    .kicker { color: var(--blue); text-transform: uppercase; font-size: 12px; font-weight: 900; letter-spacing: 2px; }
+    h2 { color: var(--navy); font-size: clamp(30px, 4vw, 43px); line-height: 1.15; margin: 10px 0 13px; }
+    .section-head p { color: var(--muted); }
+    .services { background: var(--light); }
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
+    .card {
+      background: white; border-radius: 18px; overflow: hidden;
+      box-shadow: 0 12px 35px rgba(20,45,80,.08);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 20px 45px rgba(20,45,80,.15); }
+    .card img { display: block; width: 100%; height: 270px; object-fit: cover; }
+    .card-body { padding: 25px; }
+    .card h3 { color: var(--navy); font-size: 24px; margin-bottom: 9px; }
+    .card p { color: var(--muted); margin-bottom: 19px; }
+    .card a { color: var(--blue); font-weight: 800; }
+    .why { background: white; }
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .feature {
+      padding: 27px; border: 1px solid #e5edf7; border-radius: 15px;
+      background: linear-gradient(145deg, #fff, #f7faff);
+    }
+    .feature-icon {
+      width: 48px; height: 48px; display: grid; place-items: center;
+      background: #e8f2ff; color: var(--blue); border-radius: 13px;
+      font-size: 23px; margin-bottom: 15px;
+    }
+    .feature h3 { color: var(--navy); margin-bottom: 7px; }
+    .feature p { color: var(--muted); font-size: 14px; }
+    .contact {
+      color: white; text-align: center;
+      background: radial-gradient(circle at top right, #174d8c, transparent 40%), var(--navy);
+    }
+    .contact h2 { color: white; }
+    .contact p { color: #cfdaea; margin: 0 auto 25px; max-width: 600px; }
+    .contact-number { font-size: clamp(27px, 5vw, 42px); font-weight: 900; color: var(--yellow); margin: 12px 0 25px; }
+    footer { background: #041226; color: #aebed2; padding: 22px; text-align: center; font-size: 13px; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 760px) {
+      .nav { flex-wrap: wrap; }
+      .navlinks { order: 3; width: 100%; justify-content: center; gap: 17px; flex-wrap: wrap; }
+      .nav-phone { margin-left: auto; }
+      .hero { min-height: 520px; background-position: 58% center; }
+      .cards, .features { grid-template-columns: 1fr; }
+      section { padding: 65px 18px; }
+      .card img { height: 230px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <span>Toshkent bo‘ylab xizmatlar</span>
+    <span>Ishonchli xizmat • Qulay murojaat</span>
+  </div>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="#home">MASTER <span>PRO</span></a>
+      <div class="navlinks">
+        <a href="#home">Bosh sahifa</a>
+        <a href="#services">Xizmatlar</a>
+        <a href="#about">Afzalliklar</a>
+        <a href="#contact">Aloqa</a>
+      </div>
+      <a class="nav-phone" href="tel:+998957770455">95 777 04 55</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <span class="eyebrow">Santexnika va elektrika</span>
+        <h1>Uyingiz uchun <span>ishonchli</span> usta xizmati</h1>
+        <p>Santexnika va elektrika bo‘yicha kerakli xizmatlar. Murojaat qiling — xizmat turi va qulay vaqtni kelishib olamiz.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="tel:+998957770455">☎ Buyurtma berish</a>
+          <a class="btn btn-outline" href="#services">Xizmatlarni ko‘rish</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Bizning xizmatlar</span>
+          <h2>Qanday yordam bera olamiz?</h2>
+          <p>Kerakli xizmat turini tanlang va buyurtma berish uchun bog‘laning.</p>
+        </div>
+        <div class="cards">
+          <article class="card reveal">
+            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1000&q=85" alt="Santexnika ishlari va quvurlar">
+            <div class="card-body">
+              <h3>Santexnika xizmatlari</h3>
+              <p>Kran, rakovina, quvur va boshqa santexnika jihozlarini o‘rnatish hamda ta’mirlash.</p>
+              <a href="tel:+998957770455">Buyurtma berish →</a>
+            </div>
+          </article>
+          <article class="card reveal">
+            <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=85" alt="Elektrik ustasi elektr jihozlari bilan ishlamoqda">
+            <div class="card-body">
+              <h3>Elektrika xizmatlari</h3>
+              <p>Rozetka, yoritish moslamalari va elektr tarmoqlariga oid xizmatlar.</p>
+              <a href="tel:+998957770455">Buyurtma berish →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="kicker">Nega MASTER PRO?</span>
+          <h2>Xizmatga qulay murojaat</h2>
+          <p>Biz bilan bog‘laning, kerakli ishni tushuntiring va xizmat tafsilotlarini kelishib oling.</p>
+        </div>
+        <div class="features">
+          <div class="feature reveal">
+            <div class="feature-icon">✓</div>
+            <h3>Ikki yo‘nalish</h3>
+            <p>Santexnika va elektrika xizmatlari bitta joyda.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="feature-icon">☎</div>
+            <h3>Oson bog‘lanish</h3>
+            <p>Bir tugma orqali telefon qilish mumkin.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="feature-icon">⌂</div>
+            <h3>Qulay kelishuv</h3>
+            <p>Ish tafsilotlari va vaqtni oldindan kelishib oling.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container reveal">
+        <span class="kicker" style="color:#ffca3a">Biz bilan bog‘laning</span>
+        <h2>Usta kerakmi?</h2>
+        <p>Buyurtma berish yoki xizmatlar haqida ma’lumot olish uchun telefon qiling.</p>
+        <div class="contact-number">95 777 04 55</div>
+        <a class="btn btn-primary" href="tel:+998957770455">☎ Hozir qo‘ng‘iroq qilish</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 MASTER PRO. Barcha huquqlar himoyalangan.</footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(item => observer.observe(item));
+  </script>
+</body>
+</html>
